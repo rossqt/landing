@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="../img/tab.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Agile Techfrontier Corporation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+        .footer-gradient {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .brand-logo {
+            height: 48px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        .brand-logo-container {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-9">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo on the far left -->
+            <div class="flex-shrink-0">
+                <img src="../img/logo1.png" alt="Agile Logo" class="h-20">
+            </div>
+
+            <!-- Navigation links on the far right -->
+            <div class="hidden sm:flex sm:items-center sm:space-x-6">
+                <a href="../index.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors duration-200">
+                    Home
+                </a>
+                <a href="products.html" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors duration-200">
+                    Products
+                </a>
+                <a href="services.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors duration-200">
+                    Services
+                </a>
+                <a href="about.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors duration-200">
+                    About
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="sm:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+            <!-- Mobile menu button (optional dropdown functionality can be added later) -->
+            <div class="sm:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 transition-colors duration-200" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+            <!-- Mobile menu -->
+            <div class="hidden sm:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="bg-blue-50 text-blue-700 block pl-3 pr-4 py-2 text-base font-medium">Home</a>
+                <a href="products.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-medium">Products</a>
+                <a href="services.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-medium">Services</a>
+                <a href="about.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-medium">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-6xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+            <div class="text-center animate-fadeIn">
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Our <span class="text-blue-300">Product</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg md:text-xl opacity-90">
+                    Comprehensive IT solutions from the world's most trusted brands
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Intro -->
+    <div class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="lg:text-center mb-8 animate-fadeIn delay-100">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Wide Range of Solutions</h2>
+                <p class="mt-1 text-2xl leading-8 font-bold text-gray-900 sm:text-3xl">
+                    Expanding Our Impact Through Technology
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover-scale mb-12 animate-fadeIn delay-200">
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Agile Techfrontier Corporation offers a comprehensive array of IT products to meet all your technology needs. From laptops and desktops to servers, networking equipment, and specialized software, we partner with the world's most trusted brands to deliver quality solutions.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Our collaboration with industry-leading partners enables us to achieve greater scale and impact. We take pride in our partnerships with globally recognized brands that share our commitment to innovation, reliability, and customer satisfaction.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- All Brands Section -->
+    <div class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 animate-fadeIn delay-100">
+                <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                    Our Trusted Brand Partners
+                </h2>
+                <p class="mt-2 max-w-xl text-gray-600 mx-auto text-sm">
+                    We partner with the world's leading technology brands to bring you the best solutions
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover-scale mb-8 animate-fadeIn delay-200">
+                <p class="text-gray-600 leading-relaxed">
+                    Below is the complete list of our brand partners. Each of these companies represents excellence in their respective fields, and we're proud to offer their products through our distribution channels.
+                </p>
+            </div>
+
+            <!-- Brand Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fadeIn delay-300">
+                <!-- Brand items will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="brand-gradient text-white">
+        <div class="max-w-xl mx-auto text-center py-12 px-4 sm:py-14 sm:px-6 lg:px-8 animate-fadeIn delay-100">
+            <h2 class="text-2xl font-bold text-white sm:text-3xl">
+                <span class="block">Need specific product information?</span>
+                <span class="block">Our team can help.</span>
+            </h2>
+            <p class="mt-3 text-blue-200">
+                Contact us for detailed specifications, pricing, and availability of any product in our portfolio.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white">
+        <div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="space-y-3 animate-fadeIn delay-200">
+                    <h3 class="text-base font-bold">Agile Techfrontier Corporation</h3>
+                    <p class="text-blue-200 text-sm">
+                        ATC is an end-to-end provider of IT products, services and solutions committed to help your company empower to do great things through technology.
+                    </p>
+                    <p class="text-blue-200 text-sm">
+                        Our team's expertise in the field of IT retail and professional services has given us the leverage from all other providers to keep your company up-to-date with the latest technology trends.
+                    </p>
+                    <p class="text-blue-100 font-medium text-sm">
+                        Grow with us! Let us advance your business. Forward. Faster.
+                    </p>
+                </div>
+                <div class="space-y-3 animate-fadeIn delay-300">
+                    <h3 class="text-base font-bold">Contact Information</h3>
+                    <address class="not-italic text-blue-200 text-sm">
+                        <p>Agile Techfrontier Corporation</p>
+                        <p>8th Floor Peninsula Court Building</p>
+                        <p>8735 Paseo de Roxas corner Makati Avenue</p>
+                        <p>Barangay Bel-Air, Makati City</p>
+                        <p>Philippines 1226</p>
+                    </address>
+                    <div class="space-y-1 text-sm">
+                        <p class="text-blue-200">
+                            <span class="font-medium">Trunkline:</span> +632 8297 0498
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Website:</span> www.agiletechfrontier.com
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-3 animate-fadeIn delay-400">
+                    <h3 class="text-base font-bold">Send us a message</h3>
+                    <p class="text-blue-200 text-sm">
+                        If you have questions concerning our products and services, or you're experiencing technical difficulties with our website, please <a href="contact.html" class="text-white underline">click here</a> and fill up our contact form. We will respond within 24 hours.
+                    </p>
+                    <div class="space-y-1 text-sm">
+                        <p class="text-blue-200">
+                            <span class="font-medium">For any inquiries:</span> info@agiletechfrontier.com
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Sales Team:</span> sales@agiletechfrontier.com
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Technical Support Team:</span> support@agiletechfrontier.com
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Product Development Team:</span> productdev@agiletechfrontier.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 animate-fadeIn delay-500">
+                <p class="text-xs text-blue-200 text-center">
+                    &copy; Agile Techfrontier Corporation. Ross Kasilag.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+
+     // Brand data with logos and descriptions
+        const brands = [
+            {
+                brandCardhref: `https://www.acer.com/us-en`,
+                name: "Acer",
+                logo: "https://logo.clearbit.com/acer.com",
+                description: "Computers, laptops, monitors, and projectors",
+                website: "https://www.acer.com"
+            },
+            {
+                name: "Apple",
+                logo: "https://logo.clearbit.com/apple.com",
+                description: "Mac computers, iPhones, iPads, and accessories",
+                website: "https://www.apple.com/ph/store?afid=p240%7Cgo~cmp-268361412~adg-16280229612~ad-743864650218_kwd-10778630~dev-c~ext-~prd-~mca-~nt-search&cid=aos-ph-kwgo-brand--"
+            },
+            {
+                name: "Asus",
+                logo: "https://logo.clearbit.com/asus.com",
+                description: "Laptops, motherboards, graphics cards, and monitors",
+                website: "https://www.asus.com/"
+            },
+            {
+                name: "Dell",
+                logo: "https://logo.clearbit.com/dell.com",
+                description: "Enterprise and consumer computers, servers, and storage",
+                website: "https://www.dell.com/en-ph"
+            },
+            {
+                name: "Lenovo",
+                logo: "https://logo.clearbit.com/lenovo.com",
+                description: "ThinkPad laptops, IdeaPad, and ThinkCentre desktops",
+                website: "https://www.lenovo.com/ph/en/d/deals/intel-online-exclusive/?orgRef=https%253A%252F%252Fwww.google.com%252F&cid=ph:sem:ozxved&gad_source=1&gad_campaignid=16450757025&gbraid=0AAAAACnHrP86jojtsh1HifPwDgj6Kr74J&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rla0VQdA684humyf3q2RoJCqEqxBHEpDogUQfNeW5fQuybVZKRXL6BoCHiwQAvD_BwE"
+            },
+            {
+                name: "Samsung",
+                logo: "https://logo.clearbit.com/samsung.com",
+                description: "Smartphones, tablets, monitors, and SSDs",
+                website: "https://www.samsung.com/ph/"
+            },
+            {
+                name: "IBM",
+                logo: "https://logo.clearbit.com/ibm.com",
+                description: "Enterprise servers, storage, and software solutions",
+                website: "https://www.ibm.com/us-en"
+            },
+            {
+                name: "Honeywell",
+                logo: "https://logo.clearbit.com/honeywell.com",
+                description: "Barcode scanners, printers, and mobile computers",
+                website: "https://www.honeywell.com/us/en"
+            },
+            {
+                name: "ZTE",
+                logo: "https://logo.clearbit.com/zte.com.cn",
+                description: "Networking equipment and telecommunications solutions",
+                website: "https://www.zte.com.cn/global/"
+            },
+            {
+                name: "Cisco",
+                logo: "https://logo.clearbit.com/cisco.com",
+                description: "Networking hardware, telecommunications equipment",
+                website: "https://www.cisco.com/"
+            },
+            {
+                name: "Infocus",
+                logo: "https://logo.clearbit.com/infocus.com",
+                description: "Projectors and display solutions",
+                website: "https://infocus.com/"
+            },
+            {
+                name: "Oracle",
+                logo: "https://logo.clearbit.com/oracle.com",
+                description: "Enterprise software, database systems, and cloud solutions",
+                website: "https://www.oracle.com/ph/"
+            },
+            {
+                name: "APC",
+                logo: "https://logo.clearbit.com/apc.com",
+                description: "UPS systems, power protection, and cooling solutions",
+                website: "https://www.apc.com/us/en/country-selector/?ref_url=/"
+            },
+            {
+                name: "Intel",
+                logo: "https://logo.clearbit.com/intel.com",
+                description: "Processors, chipsets, and networking components",
+                website: "https://www.intel.com/content/www/us/en/homepage.html"
+            },
+            {
+                name: "AMD",
+                logo: "https://logo.clearbit.com/amd.com",
+                description: "Processors, graphics cards, and chipset solutions",
+                website: "https://www.amd.com/en.html"
+            },
+            {
+                name: "HP",
+                logo: "https://logo.clearbit.com/hp.com",
+                description: "Printers, computers, and enterprise solutions",
+                website: "https://www.hp.com/ph-en/home.html"
+            },
+            {
+                name: "Microsoft",
+                logo: "https://logo.clearbit.com/microsoft.com",
+                description: "Operating systems, productivity software, and cloud services",
+                website: "https://www.microsoft.com/en-ph"
+            },
+            {
+                name: "Kingston",
+                logo: "https://logo.clearbit.com/kingston.com",
+                description: "Memory modules, SSDs, and flash storage",
+                website: "https://www.kingston.com/en"
+            },
+            {
+                name: "VMware",
+                logo: "https://logo.clearbit.com/vmware.com",
+                description: "Virtualization and cloud computing software",
+                website: "https://www.vmware.com/"
+            },
+            {
+                name: "A4Tech",
+                logo: "https://logo.clearbit.com/a4tech.com",
+                description: "Computer peripherals and input devices",
+                website: "https://www.a4tech.com/"
+            },
+            {
+                name: "Allied Telesis",
+                logo: "https://logo.clearbit.com/alliedtelesis.com",
+                description: "Enterprise networking solutions",
+                website: "https://www.alliedtelesis.com/ph/en"
+            },
+            {
+                name: "Trend Micro",
+                logo: "https://logo.clearbit.com/trendmicro.com",
+                description: "Cybersecurity and threat defense solutions",
+                website: "https://www.trendmicro.com/en_ph/business.html"
+            },
+            {
+                name: "Zebra",
+                logo: "https://logo.clearbit.com/zebra.com",
+                description: "Barcode printers, scanners, and mobile computers",
+                website: "https://www.zebra.com/ap/en.html"
+            },
+            {
+                name: "Red Hat",
+                logo: "https://logo.clearbit.com/redhat.com",
+                description: "Open source software solutions",
+                website: "https://www.redhat.com/en"
+            },
+            {
+                name: "Logitech",
+                logo: "https://logo.clearbit.com/logitech.com",
+                description: "Computer peripherals and video conferencing solutions",
+                website: "https://www.logitechg.com/"
+            },
+            {
+                name: "Genius",
+                logo: "https://logo.clearbit.com/geniusnet.com",
+                description: "Computer input devices and accessories",
+                website: "https://www.geniusnet.com/en"
+            },
+            {
+                name: "Huawei",
+                logo: "https://logo.clearbit.com/huawei.com",
+                description: "Networking, telecommunications, and mobile devices",
+                website: "https://consumer.huawei.com/ph/offer/?gad_source=1&gad_campaignid=20902326656&gbraid=0AAAAAqr9KjYKsUbxl-SHV0TtNP6T4l8UX&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rlzlkvyqQTV2KpI97ciJxTef-3XuPUCeQ6sywv9IdP0acvMwWoFQ8xoCB4MQAvD_BwE"
+            },
+            {
+                name: "Intel Security",
+                logo: "https://logo.clearbit.com/mcafee.com",
+                description: "Cybersecurity and threat management solutions",
+                website: "https://www.intel.com/content/www/us/en/security-center/default.html"
+            },
+            {
+                name: "Meraki",
+                logo: "https://logo.clearbit.com/meraki.com",
+                description: "Cloud-managed IT solutions",
+                category: "https://meraki.cisco.com/"
+            },
+            {
+                name: "Fujitsu",
+                logo: "https://logo.clearbit.com/fujitsu.com",
+                description: "Enterprise servers, storage, and services",
+                website: "https://www.fujitsu.com/ph/about/resources/contact/offices/fpi/"
+            },
+            {
+                name: "Citrix",
+                logo: "https://logo.clearbit.com/citrix.com",
+                description: "Virtualization, networking, and cloud services",
+                website: "https://www.citrix.com/?srsltid=AfmBOooVoXqDivOhA4_mWL2VNksPgcpBz3suzA-NPuuy461861WdhK8p"
+            },
+            {
+                name: "Canon",
+                logo: "https://logo.clearbit.com/canon.com",
+                description: "Printers, cameras, and imaging solutions",
+                website: "https://ph.canon/en/consumer"
+            },
+            {
+                name: "Fuji Xerox",
+                logo: "https://logo.clearbit.com/fujixerox.com",
+                description: "Document management and printing solutions",
+                website: "https://www.xerox.com/en-us"
+            },
+            {
+                name: "Fortinet",
+                logo: "https://logo.clearbit.com/fortinet.com",
+                description: "Cybersecurity and network security solutions",
+                website: "https://www.fortinet.com/"
+            },
+            {
+                name: "Palo Alto",
+                logo: "https://logo.clearbit.com/paloaltonetworks.com",
+                description: "Enterprise cybersecurity solutions",
+                website: "https://www.paloaltonetworks.com/"
+            },
+            {
+                name: "Samsung Business",
+                logo: "https://logo.clearbit.com/samsung.com/us/business",
+                description: "Enterprise display and mobile solutions",
+                website: "https://www.samsung.com/us/business/"
+            },
+            {
+                name: "Seagate",
+                logo: "https://logo.clearbit.com/seagate.com",
+                description: "Hard drives and storage solutions",
+                website: "https://www.seagate.com/"
+            },
+            {
+                name: "Panasonic",
+                logo: "https://logo.clearbit.com/panasonic.com",
+                description: "Professional displays and rugged mobile computers",
+                website: "https://www.panasonic.com/ph/"
+            },
+            {
+                name: "Veritas",
+                logo: "https://logo.clearbit.com/veritas.com",
+                description: "Data protection and storage management",
+                website: "https://www.veritas.com/"
+            },
+            {
+                name: "Motorola",
+                logo: "https://logo.clearbit.com/motorolasolutions.com",
+                description: "Enterprise mobile computers and barcode scanners",
+                website: "https://www.motorola.com/ph/"
+            },
+            {
+                name: "ViewSonic",
+                logo: "https://logo.clearbit.com/viewsonic.com",
+                description: "Monitors, projectors, and display solutions",
+                website: "https://www.viewsonic.com/ph/"
+            },
+            {
+                name: "WatchGuard",
+                logo: "https://logo.clearbit.com/watchguard.com",
+                description: "Network security and firewall solutions",
+                website: "https://www.watchguard.com/"
+            },
+            {
+                name: "Emerson",
+                logo: "https://logo.clearbit.com/emerson.com",
+                description: "Power and cooling infrastructure solutions",
+                website: "https://www.emerson.com/en-us/global"
+            },
+            {
+                name: "ADATA",
+                logo: "https://logo.clearbit.com/adata.com",
+                description: "Memory modules and storage devices",
+                website: "https://www.adata.com/ph"
+            },
+            {
+                name: "Neo",
+                logo: "https://logo.clearbit.com/neousa.com",
+                description: "Thin clients and cloud computing solutions",
+                website: "https://www.neooffice.ph/#"
+            },
+            {
+                name: "Netgear",
+                logo: "https://logo.clearbit.com/netgear.com",
+                description: "Networking equipment for home and business",
+                website: "https://www.netgear.com/"
+            },
+            {
+                name: "Giada",
+                logo: "https://logo.clearbit.com/giada.com",
+                description: "Mini PCs and digital signage solutions",
+                website: "https://www.giadatech.com/"
+            },
+            {
+                name: "Corsair",
+                logo: "https://logo.clearbit.com/corsair.com",
+                description: "Gaming peripherals and PC components",
+                website: "https://www.corsair.com/ww/en?srsltid=AfmBOoqRZeOK41WzMFq-qlXhPsRZiGS-o96mVy1OPqaBTRFxXSLbGC2J"
+            },
+            {
+                name: "LG",
+                logo: "https://logo.clearbit.com/lg.com",
+                description: "Monitors, displays, and home appliances",
+                website: "https://www.lg.com/ph/washer-dryers/front-load-washing-machines/?ec_model_status_code=ACTIVE&utm_source=google-ads&utm_medium=cpc&utm_campaign=HQ-HS-SEM_HS_WM_PH_AO_NA_CNS_PSE_consideration_BRA_EN_lg.com_NA_BM_tCPA_BCL_google-ads_AO&utm_content=20250213_Generic_NA_BCL&utm_term=NA&gad_source=1&gad_campaignid=22267176952&gbraid=0AAAAADDBwx7bSdOH_uk9rGJnlemZEy_G0&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rsxAsij38v4eHaK8hUhkQg-ST6Lfg65ZRHjqiYHagW0s08AOxsG6lhoCXVAQAvD_BwE"
+            },
+            {
+                name: "GFI",
+                logo: "https://logo.clearbit.com/gfi.com",
+                description: "Security and networking software solutions",
+                website: "https://gfi.ai/"
+            },
+            {
+                name: "Dascom",
+                logo: "https://logo.clearbit.com/dascom.com",
+                description: "Print servers and networking solutions",
+                website: "https://dascom.com/"
+            },
+            {
+                name: "SharePoint",
+                logo: "https://logo.clearbit.com/microsoft.com/sharepoint",
+                description: "Collaboration and document management platform",
+                website: "https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration"
+            },
+            {
+                name: "Sparkle",
+                logo: "https://logo.clearbit.com/sparkle.com.tw",
+                description: "Graphics cards and PC components",
+                website: "https://www.sparkle.com.tw/"
+            },
+            {
+                name: "3M",
+                logo: "https://logo.clearbit.com/3m.com",
+                description: "Projectors and display solutions",
+                website: "https://www.3m.com/"
+            },
+            {
+                name: "MSI",
+                logo: "https://logo.clearbit.com/msi.com",
+                description: "Gaming laptops, desktops, and components",
+                website: "https://www.msi.com/index.php"
+            },
+            {
+                name: "Apacer",
+                logo: "https://logo.clearbit.com/apacer.com",
+                description: "Memory modules and flash storage",
+                website: "https://www.apacer.com/en"
+            },
+            {
+                name: "HTC",
+                logo: "https://logo.clearbit.com/htc.com",
+                description: "Virtual reality systems and mobile devices",
+                website: "https://www.htc.com/eu/?srsltid=AfmBOoqAGdkVumlPKMaPHEEQX7xn-h_jtxmwcKI8e0QmLZMAIicVDP0P"
+            },
+            {
+                name: "Elo Touch Solutions",
+                logo: "https://logo.clearbit.com/elotouch.com",
+                description: "Touchscreen monitors and kiosk solutions",
+                website: "https://www.elotouch.com/"
+            },
+            {
+                name: "ZWCAD",
+                logo: "https://logo.clearbit.com/zwsoft.com",
+                description: "CAD and design software solutions",
+                website: "https://www.zwsoft.com/product/zwcad"
+            },
+            {
+                name: "Ozaki",
+                logo: "https://logo.clearbit.com/ozaki.com.tw",
+                description: "Computer peripherals and accessories",
+                website: "peripherals"
+            },
+            {
+                name: "Epson",
+                logo: "https://logo.clearbit.com/epson.com",
+                description: "Printers, projectors, and scanners",
+                website: "https://www.epson.com.ph/"
+            },
+            {
+                name: "Brother",
+                logo: "https://logo.clearbit.com/brother.com",
+                description: "Printers, label makers, and scanners",
+                website: "https://www.brother.com.ph/"
+            },
+            {
+                name: "Smart Bro",
+                logo: "https://logo.clearbit.com/smart.com.ph",
+                description: "Wireless broadband solutions",
+                website: "https://store.smart.com.ph/devices?brands=75&filter=pocket&gad_source=1&gad_campaignid=22523221677&gbraid=0AAAAA-x4VOs6kMeXZcSqmZIOXSWZPGrBn&gclid=CjwKCAjw6NrBBhB6EiwAvnT_riF5x1vQYiRmm4wDxMG6gwugIvZrV2I1izMTPxmSMuM_obUmwSj36RoCS0oQAvD_BwE"
+            },
+            {
+                name: "Eaton",
+                logo: "https://logo.clearbit.com/eaton.com",
+                description: "Power management and UPS solutions",
+                website: "https://www.eaton.com/us/en-us.html"
+            },
+            {
+                name: "Symantec",
+                logo: "https://logo.clearbit.com/symantec.com",
+                description: "Cybersecurity and endpoint protection",
+                website: "https://www.broadcom.com/products/cybersecurity"
+            },
+            {
+                name: "Websense",
+                logo: "https://logo.clearbit.com/websense.com",
+                description: "Web security and filtering solutions",
+                website: "https://www.forcepoint.com/websense"
+            },
+            {
+                name: "Ruckus",
+                logo: "https://logo.clearbit.com/ruckuswireless.com",
+                description: "Wireless networking solutions",
+                website: "https://www.ruckusnetworks.com/"
+            },
+            {
+                name: "Avigilon",
+                logo: "https://logo.clearbit.com/avigilon.com",
+                description: "Video surveillance and security solutions",
+                website: "https://www.avigilon.com/"
+            },
+            {
+                name: "Buffalo",
+                logo: "https://logo.clearbit.com/buffalotech.com",
+                description: "Networking and storage solutions",
+                website: "https://www.buffalo-technology.com/"
+            },
+            {
+                name: "Jetway",
+                logo: "https://logo.clearbit.com/jetwaycomputer.com",
+                description: "Motherboards and embedded systems",
+                website: "https://jetwayipc.com/"
+            },
+            {
+                name: "Corel",
+                logo: "https://logo.clearbit.com/corel.com",
+                description: "Graphics and productivity software",
+                website: "https://www.coreldraw.com/en/product/coreldraw/?x-vehicle=ppc_brkws&utm_medium=cpc&utm_source=google&utm_term=corel&utm_content=&utm_id=11288458502&extensionid=&matchtype=e&device=c&devicemodel=&creative=736120032125&network=g&placement=&campaignid=11288458502&x-source=ppc&x-target=ppc&promo=ppc&campaign_name=CDGS-Search-Brand-Evergreen-Tier3-EN&gad_source=1&gad_campaignid=11288458502&gbraid=0AAAAADew63Syx8PFAGVfNSlI9P8ItDfpn&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rngE6v_1l6jG6roGRUA5v529a9BaNW8wVa0zHFj2W5S7f5R4RyEwIhoCI_AQAvD_BwE"
+            },
+            {
+                name: "Jebra",
+                logo: "https://logo.clearbit.com/jabra.com",
+                description: "Audio and communication solutions",
+                website: "https://www.jabra.com/en-apac/"
+            },
+            {
+                name: "iLuv",
+                logo: "https://logo.clearbit.com/iluv.com",
+                description: "Audio accessories and mobile peripherals",
+                website: "https://www.iluv.com/"
+            },
+            {
+                name: "PcChips",
+                logo: "../img/image-removebg-preview (6)",
+                description: "Motherboards and PC components",
+                website: "https://pcchips.com.tw/"
+            },
+            {
+                name: "Printonix",
+                logo: "https://logo.clearbit.com/printronix.com",
+                description: "Industrial printing solutions",
+                website: "https://printronix.com/"
+            },
+            {
+                name: "Beats Audio",
+                logo: "https://logo.clearbit.com/beatsbydre.com",
+                description: "Premium audio equipment and headphones",
+                website: "https://www.beatsbydre.com/"
+            },
+            {
+                name: "Autodesk AutoCAD",
+                logo: "https://logo.clearbit.com/autodesk.com",
+                description: "CAD design and drafting software",
+                website: "https://www.autodesk.com/asean/products/autocad/overview?mktvar002=5019031|SEM|22518322449|180805264524|kwd-108353073&term=1-YEAR&tab=subscription&utm_source=GGL&utm_medium=SEM&utm_campaign=GGL_DEC_AutoCAD_APAC_PH_eComm_SEM_BR_New_EX_0000_5019031_&utm_id=5019031&utm_term=kwd-108353073&mkwid=s|pcrid|750729747036|pkw|autodesk%20autocad|pmt|e|pdv|c|slid||pgrid|180805264524|ptaid|kwd-108353073|pid|&utm_medium=cpc&utm_source=google&utm_campaign=&utm_term=autodesk%20autocad&utm_content=s|pcrid|750729747036|pkw|autodesk%20autocad|pmt|e|pdv|c|slid||pgrid|180805264524|ptaid|kwd-108353073|&gad_source=1&gad_campaignid=22518322449&gbraid=0AAAAADMqutnLUg1IiMGGX9vNx6jC5Cwia&gclid=CjwKCAjw6NrBBhB6EiwAvnT_rukrmK-kHy5Lp2RRe9Tm1lauBEHkFWkphRcxGcfhAMrnyXF78yJgWhoCIMwQAvD_BwE"
+            }
+        ];
+
+
+    // Generate brand grid with clickable links
+    const brandGrid = document.querySelector('.grid-cols-1.sm\\:grid-cols-2.md\\:grid-cols-3.lg\\:grid-cols-4');
+    
+    brands.forEach(brand => {
+        const brandLink = document.createElement('a');
+        brandLink.href = brand.website;
+        brandLink.target = "_blank";
+        brandLink.rel = "noopener noreferrer";
+        brandLink.className = 'brand-card block bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 hover:border-blue-200';
+        brandLink.innerHTML = `
+            <div class="text-center h-full flex flex-col">
+                <div class="brand-logo-container mb-4">
+                    <img src="${brand.logo}" alt="${brand.name} logo" 
+                         class="brand-logo mx-auto h-12 object-contain" 
+                         onerror="this.src='https://via.placeholder.com/120x48?text=${encodeURIComponent(brand.name)}';this.onerror=null;">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">${brand.name}</h3>
+                <p class="text-gray-600 text-sm mb-4 flex-grow">${brand.description}</p>
+            </div>
+        `;
+        
+        brandGrid.appendChild(brandLink);
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fadeIn');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-fadeIn').forEach(element => {
+        observer.observe(element);
+        element.classList.remove('animate-fadeIn');
+    });
+</script>
+
+<style>
+    .brand-card {
+        transition: all 0.3s ease;
+    }
+    .brand-card:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .brand-logo {
+        transition: transform 0.3s ease;
+    }
+    .brand-card:hover .brand-logo {
+        transform: scale(1.05);
+    }
+</style>
+</body>
+</html>

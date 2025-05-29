@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="img/tab.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Techfrontier Corporation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+        .footer-gradient {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-9">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo on the far left -->
+            <div class="flex-shrink-0">
+                <img src="img/logo1.png" alt="Agile Logo" class="h-20">
+            </div>
+
+            <!-- Navigation links on the far right -->
+            <div class="hidden sm:flex sm:items-center sm:space-x-6">
+                <a href="#" class="text-blue-600 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors duration-200">
+                    Home
+                </a>
+                <a href="form/products.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors duration-200">
+                    Products
+                </a>
+                <a href="form/services.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors duration-200">
+                    Services
+                </a>
+                <a href="form/about.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors duration-200">
+                    About
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="sm:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+            <!-- Mobile menu button (optional dropdown functionality can be added later) -->
+            <div class="sm:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-300 transition-colors duration-200" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+        <!-- Mobile menu -->
+        <div class="hidden sm:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="index.html" class="bg-blue-50 text-blue-700 block pl-3 pr-4 py-2 text-base font-medium">Home</a>
+                <a href="form/products.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-medium">Products</a>
+                <a href="form/services.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-medium">Services</a>
+                <a href="form/about.html" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-medium">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-6xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+            <div class="text-center animate-fadeIn">
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Welcome to <span class="text-blue-300">Agile Techfrontier Corporation</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg md:text-xl opacity-90">
+                    Simplifying IT through end-to-end solutions and cutting-edge technology
+                </p>
+                <div class="mt-8">
+                    <a href="#about" class="inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-white hover:bg-gray-50 transition-colors duration-200 hover:shadow-sm pulse">
+                        Learn More
+                        <svg class="ml-2 -mr-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="lg:text-center animate-fadeIn delay-100">
+                <p class="mt-1 text-2xl leading-8 font-bold text-gray-900 sm:text-3xl">
+                    Agile Techfrontier Corporation (ATC)
+                </p>
+            </div>
+            <div class="mt-8 animate-fadeIn delay-200">
+                <div class="bg-gray-50 p-5 rounded-lg shadow-sm hover-scale">
+                    <p class="text-gray-600 leading-relaxed">
+                        Agile Techfrontier Corporation, also known as ATC, is a fast-growing provider of information technology retail products, services and solutions. ATC simplifies IT by providing end-to-end capabilities and acting as a singular source of high-performing IT hardware and software, IT services and cutting-edge solutions to its valued customers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Value Proposition -->
+    <div class="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center animate-fadeIn delay-100">
+                <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                    Why Choose ATC?
+                </h2>
+                <p class="mt-2 max-w-xl text-gray-600 mx-auto">
+                    We deliver comprehensive IT solutions tailored to your business needs
+                </p>
+            </div>
+            <div class="mt-8">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover-scale animate-fadeIn delay-200">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-medium text-gray-900">Quality Hardware</h3>
+                            <p class="mt-2 text-sm text-gray-600">
+                                Premium IT hardware from trusted global manufacturers to ensure reliability and performance.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover-scale animate-fadeIn delay-300">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-medium text-gray-900">Innovative Software</h3>
+                            <p class="mt-2 text-sm text-gray-600">
+                                Cutting-edge software solutions to streamline operations and enhance productivity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-sm hover-scale animate-fadeIn delay-400">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-lg font-medium text-gray-900">Expert Support</h3>
+                            <p class="mt-2 text-sm text-gray-600">
+                                Dedicated technical support team ready to assist with any challenges you may face.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ASUS Service Center Section -->
+                <div class="mt-12 animate-fadeIn delay-500">
+                    <div class="footer-gradient p-8 rounded-lg shadow-lg text-center border border-gray-700">
+                        <div class="flex flex-col items-center">
+                            <div class="mb-6">
+                                <img src="img/image-removebg-preview (5).png" alt="ASUS Logo" style="height: 100px;">
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Authorized ASUS Service Center</h3>
+                            <p class="text-gray-300 max-w-2xl mx-auto">
+                                We are proud to be an authorized ASUS service center, providing official warranty services and expert repairs for all ASUS products.
+                            </p>
+                            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-left text-gray-300">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                    </div>
+                                    <p class="ml-3">Genuine ASUS parts and components</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                    </div>
+                                    <p class="ml-3">ASUS-certified technicians</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                    </div>
+                                    <p class="ml-3">Official warranty services</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-check-circle text-green-400"></i>
+                                    </div>
+                                    <p class="ml-3">Quick turnaround times</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-blue-700">
+        <div class="max-w-xl mx-auto text-center py-12 px-4 sm:py-14 sm:px-6 lg:px-8 animate-fadeIn delay-100">
+            <h2 class="text-2xl font-bold text-white sm:text-3xl">
+                <span class="block">Ready to transform your business?</span>
+                <span class="block">Contact us today.</span>
+            </h2>
+            <p class="mt-3 text-blue-200">
+                Our team is ready to discuss how we can help your company leverage technology for growth.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white">
+        <div class="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-3 animate-fadeIn delay-200">
+                    <h3 class="text-base font-bold">Agile Techfrontier Corporation</h3>
+                    <p class="text-blue-200 text-sm">
+                        ATC is an end-to-end provider of IT products, services and solutions committed to help your company empower to do great things through technology.
+                    </p>
+                    <p class="text-blue-200 text-sm">
+                        Our team's expertise in the field of IT retail and professional services has given us the leverage from all other providers to keep your company up-to-date with the latest technology trends.
+                    </p>
+                    <p class="text-blue-100 font-medium text-sm">
+                        Grow with us! Let us advance your business. Forward. Faster.
+                    </p>
+                </div>
+                <div class="space-y-3 animate-fadeIn delay-300">
+                    <h3 class="text-base font-bold">Contact Information</h3>
+                    <address class="not-italic text-blue-200 text-sm">
+                        <p>Agile Techfrontier Corporation</p>
+                        <p>8th Floor Peninsula Court Building</p>
+                        <p>8735 Paseo de Roxas corner Makati Avenue</p>
+                        <p>Barangay Bel-Air, Makati City</p>
+                        <p>Philippines 1226</p>
+                    </address>
+                    <div class="space-y-1 text-sm">
+                        <p class="text-blue-200">
+                            <span class="font-medium">Trunkline:</span> +632 8297 0498
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Website:</span> www.agiletechfrontier.com
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-3 animate-fadeIn delay-400">
+                    <h3 class="text-base font-bold">Send us a message</h3>
+                    <p class="text-blue-200 text-sm">
+                        If you have questions concerning our products and services, or you're experiencing technical difficulties with our website, please <a href="contact.html" class="text-white underline">click here</a> and fill up our contact form. We will respond within 24 hours.
+                    </p>
+                    <div class="space-y-1 text-sm">
+                        <p class="text-blue-200">
+                            <span class="font-medium">For any inquiries:</span> info@agiletechfrontier.com
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Sales Team:</span> sales@agiletechfrontier.com
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Technical Support Team:</span> support@agiletechfrontier.com
+                        </p>
+                        <p class="text-blue-200">
+                            <span class="font-medium">Product Development Team:</span> productdev@agiletechfrontier.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 animate-fadeIn delay-500">
+                <p class="text-xs text-blue-200 text-center">
+                    &copy; Agile Techfrontier Corporation. Ross Kasilag.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-fadeIn').forEach(element => {
+            observer.observe(element);
+            element.classList.remove('animate-fadeIn');
+        });
+    </script>
+</body>
+</html>
